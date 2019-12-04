@@ -41,6 +41,21 @@ movie = {
     }
 }
 
+dirctor = {
+    "Directors": {
+        "Director_name": "",
+        "Director_facebook_likes": 0
+    }
+}
+
+
+actor = {
+    "Actor": {
+        "name": "",
+        "facebook_likes": 0
+    }
+}
+
 def Q1():
     #Does the movie’s amount of facebook likes correlate with its gross amount made.
     print()
