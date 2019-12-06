@@ -2,9 +2,12 @@ from pymongo import MongoClient
 import matplotlib.pyplot as plt
 import random
 
-connection = "mongodb://Charlie:PRO335@pro335-cluster-shard-00-00-1lows.azure.mongodb.net:27017,pro335-cluster-shard-00-01-1lows.azure.mongodb.net:27017,pro335-cluster-shard-00-02-1lows.azure.mongodb.net:27017/test?ssl=true&replicaSet=Pro335-Cluster-shard-0&authSource=admin&retryWrites=true&w=majority"
+connection = "mongodb://Fernando:PRO335@pro335-cluster-shard-00-00-1lows.azure.mongodb.net:27017,pro335-cluster-shard-00-01-1lows.azure.mongodb.net:27017,pro335-cluster-shard-00-02-1lows.azure.mongodb.net:27017/test?ssl=true&replicaSet=Pro335-Cluster-shard-0&authSource=admin&retryWrites=true&w=majority"
+
+
 
 client = MongoClient(connection)
+
 db = client["Imdb_Pro335_DB"]
 serverStatusResult = db.command("serverStatus")
 #print(serverStatusResult)
@@ -91,6 +94,7 @@ Directors = {
 Actors = {
     "name": "",
     "facebook_likes": 0
+
 }
 
 def Q1():
@@ -103,4 +107,4 @@ def Q2():
 
 def Q3():
     #The Directors association to the movie to bring success to the film.
-    print()
+
