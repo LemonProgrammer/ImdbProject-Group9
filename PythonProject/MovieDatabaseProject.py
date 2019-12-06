@@ -16,6 +16,7 @@ db=client.admin
 serverStatusResult=db.command("serverStatus")
 pprint(serverStatusResult)
 
+
 movie = { 
     "Movies": {
         "Color": "",
@@ -54,5 +55,6 @@ def Q2():
 def Q3():
     #The Directors association to the movie to bring success to the film.
     print()
+
 
 root.mainloop()
