@@ -9,16 +9,26 @@ db = client["Imdb_Pro335_DB"]
 serverStatusResult = db.command("serverStatus")
 #print(serverStatusResult)
 
-def get_db():
-    from pymongo import MongoClient
-    db = client.myFirstMB
-    return db
-    
-def get_country(db):
-    return db.Movies.find_one()
+ActorLikes = 300
+MovieLikes = 200
 
-db = get_db() 
-print(get_country(db))
+b1 = ActorLikes 
+b2 = MovieLikes
+  
+# Check the dates 
+if b1 == b2: 
+    print("Equal Like Ratio.") 
+elif b1 > b2: 
+    print("Actor Has More Likes.") 
+else: 
+    print("Movie Has More Likes") 
+
+#print("Movies: ")  
+print(db["Movies"][1]["movie_facebook_likes"])
+#print("Directors: ")  
+print(db["Directors"])
+#print("Actors: ")  
+print(db["Actors"])
 
 #Line Graph Demo ------------------------------------------------------------------------------------------------
 
@@ -44,7 +54,7 @@ plt.legend()
 # Save the figure to file
 plt.savefig('PlotMovieCorrelation.png', dpi=600, format='png')
 # Show figure, clear figure and free memory
-plt.show()  
+#plt.show()  
 
 #------------------------------------------------------------------------------------------------------------------
 
