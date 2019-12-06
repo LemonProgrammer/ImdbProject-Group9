@@ -1,9 +1,10 @@
 from pymongo import MongoClient
 import matplotlib.pyplot as plt
 import random
+import CSVReaderTest as testReader
 
 connection = "mongodb://Fernando:PRO335@pro335-cluster-shard-00-00-1lows.azure.mongodb.net:27017,pro335-cluster-shard-00-01-1lows.azure.mongodb.net:27017,pro335-cluster-shard-00-02-1lows.azure.mongodb.net:27017/test?ssl=true&replicaSet=Pro335-Cluster-shard-0&authSource=admin&retryWrites=true&w=majority"
-
+filepath = "../ImdbProject-Group9/PythonProject/movie_metadata.csv"
 
 
 client = MongoClient(connection)
@@ -56,8 +57,12 @@ plt.legend()
 
 # Save the figure to file
 plt.savefig('PlotMovieCorrelation.png', dpi=600, format='png')
+# Runs the parsing and importing module from CSVReaderTest.py
+testReader.ReadImdbFile(filepath)
+testReader.ImportParsedDataToDB()
+
 # Show figure, clear figure and free memory
-#plt.show()  
+plt.show()  
 
 #------------------------------------------------------------------------------------------------------------------
 
@@ -107,4 +112,4 @@ def Q2():
 
 def Q3():
     #The Directors association to the movie to bring success to the film.
-
+    print()

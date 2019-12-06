@@ -9,7 +9,7 @@ db = client["Imdb_Pro335_DB"]
 # serverStatusRes = db.command("serverStatus")
 # pp.pprint(serverStatusRes)
 
-filepath = "../PythonProject/movie_metadata.csv"
+# filepath = "../PythonProject/movie_metadata.csv"
 parsedMovies = []
 movieDictionary = {}
 # movieFile = open(filepath, encoding="utf8")
@@ -158,6 +158,6 @@ def ReadImdbFile(ifile):
         imdbReader = csv.reader(csvfile,  delimiter=',', quotechar='|')
         ParseRecords(imdbReader)
 
-ReadImdbFile(filepath)
-ImportParsedDataToDB()
+# ReadImdbFile(filepath)
+# ImportParsedDataToDB()
 # print(str(parsedMovies))
